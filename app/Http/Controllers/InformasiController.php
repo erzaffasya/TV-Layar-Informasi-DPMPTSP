@@ -109,6 +109,8 @@ class InformasiController extends Controller
         }
 
         $Informasi->save();
+        return redirect()->route('Informasi.index')
+        ->with('success', 'Informasi Berhasil Diubah');
     }
 
     public function destroy($id)

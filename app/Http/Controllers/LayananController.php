@@ -109,6 +109,8 @@ class LayananController extends Controller
         }
 
         $Layanan->save();
+        return redirect()->route('Layanan.index')
+        ->with('success', 'Layanan Berhasil Diubah');
     }
 
     public function destroy($id)

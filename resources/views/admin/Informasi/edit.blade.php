@@ -4,15 +4,16 @@
 
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Tambah Data Informasi</h5>
+                    <h5 class="card-title">Ubah Data Informasi</h5>
 
                     <!-- General Form Elements -->
-                    <form action="" method="post"  enctype="multipart/form-data">
+                    <form action="{{route('Informasi.update',$Informasi->id)}}" method="post" enctype="multipart/form-data">
                         @csrf
+                        @method("PUT")
                         <div class="row mb-3">
                             <label for="inputText" class="col-sm-2 col-form-label">Judul</label>
                             <div class="col-sm-10">
-                                <input type="text" name="judul" class="form-control">
+                                <input type="text" name="judul" value="{{$Informasi->judul}}" class="form-control">
                             </div>
                         </div>
 
@@ -25,7 +26,7 @@
                         <div class="row mb-3">
                             <label for="inputPassword" class="col-sm-2 col-form-label">Deskripsi</label>
                             <div class="col-sm-10">
-                                <textarea name="deskripsi" class="form-control" style="height: 100px"></textarea>
+                                <textarea name="deskripsi" class="form-control" style="height: 100px">{!!$Informasi->deskripsi!!}</textarea>
                             </div>
                         </div>
                         <div class="row mb-3">
@@ -37,7 +38,7 @@
                         <div class="input-group mb-3">
                             <label for="inputPassword" class="col-sm-2 col-form-label">Link Redirect</label>
                             <span class="input-group-text" id="basic-addon3">https://</span>
-                            <input type="text" name="link_redirect" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                            <input type="text" name="link_redirect" class="form-control" value="{{$Informasi->link_redirect}}" id="basic-url" aria-describedby="basic-addon3">
                         </div>
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary">Submit</button>
