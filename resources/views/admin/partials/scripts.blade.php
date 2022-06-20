@@ -12,7 +12,7 @@
 <script src="{{asset("nice/assets/js/main.js")}}"></script>
 
 <script src="https://kit.fontawesome.com/2af315f426.js" crossorigin="anonymous"></script>
-<script src="https://cdn.tiny.cloud/1/fu7h4kg25ve4cn6mdvjk1zfwzgi0f9dbqqjdrndmex7hk7tc/tinymce/5/tinymce.min.js"
+<script src="https://cdn.tiny.cloud/1/pbt8hv1pilzu9hy3yh33hvz7bnbdtjda34vxywwge56tcjou/tinymce/5/tinymce.min.js"
     referrerpolicy="origin"></script>
   <script>
       tinymce.init({
