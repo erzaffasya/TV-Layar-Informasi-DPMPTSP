@@ -16,17 +16,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('admin.index');
-});
 
-Route::resource('DetailLayanan', DetailLayananController::class);
-Route::resource('Informasi', InformasiController::class);
-Route::resource('Layanan', LayananController::class);
+
+route::prefix('admin')->middleware(['auth'])->group(
+    function () {
+        Route::get('dashboard', function () {
+            return view('admin.index');
+        })->middleware(['auth'])->name('dashboard');
+        Route::resource('DetailLayanan', DetailLayananController::class);
+        Route::resource('Informasi', InformasiController::class);
+        Route::resource('Layanan', LayananController::class);
+    }
+);
 
 // Route::get('data-inventor', [UserController::class, 'datainventor'])->name('datainventor');
-Route::get('/dashboard', function () {
-    return view('dashboard');
+Route::get('/', function () {
+    return view('admin.index');
 })->middleware(['auth'])->name('dashboard');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
