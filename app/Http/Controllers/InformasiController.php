@@ -27,7 +27,6 @@ class InformasiController extends Controller
             'judul' => 'required',
             'logo' => 'required',
             'deskripsi' => 'required',
-
         ]);
 
         if ($request->logo != null) {

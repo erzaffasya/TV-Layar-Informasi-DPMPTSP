@@ -12,19 +12,19 @@
                         <div class="row mb-3">
                             <label for="inputText" class="col-sm-3 col-form-label">Nama Layanan</label>
                             <div class="col-sm-9">
-                                <input type="text" name="nama_layanan" class="form-control">
+                                <input type="text" name="nama_layanan" class="form-control" required>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label for="inputText" class="col-sm-3 col-form-label">Lokasi</label>
                             <div class="col-sm-9">
-                                <input type="text" name="lokasi" class="form-control">
+                                <input type="text" name="lokasi" class="form-control" required>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label for="inputNumber" class="col-sm-3 col-form-label">Logo</label>
                             <div class="col-sm-9">
-                                <input name="logo" class="form-control" type="file" id="formFile">
+                                <input name="logo" class="form-control" type="file" id="formFile" required>
                             </div>
                         </div>
                         <div class="row mb-3">
