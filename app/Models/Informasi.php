@@ -11,7 +11,7 @@ class Informasi extends Model
     protected $table = 'informasi';
     protected $fillable = [
         'judul', 'deskripsi', 'logo',
-        'link_frame', 'link_redirect'
+        'file', 'link_redirect'
     ];
 
     protected $primaryKey = 'id';

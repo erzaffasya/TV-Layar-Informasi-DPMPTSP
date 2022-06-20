@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('judul')->nullable();
             $table->text('deskripsi')->nullable();
             $table->string('logo')->nullable();
-            $table->string('link_file')->nullable();
+            $table->string('file')->nullable();
             $table->string('link_redirect')->nullable();
             $table->timestamps();
         });

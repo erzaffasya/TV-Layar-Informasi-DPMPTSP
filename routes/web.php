@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\DetailLayananController;
+use App\Http\Controllers\InformasiController;
+use App\Http\Controllers\LayananController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +17,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('admin.index');
 });
 
+Route::resource('DetailLayanan', DetailLayananController::class);
+Route::resource('Informasi', InformasiController::class);
+Route::resource('Layanan', LayananController::class);
+
+// Route::get('data-inventor', [UserController::class, 'datainventor'])->name('datainventor');
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
