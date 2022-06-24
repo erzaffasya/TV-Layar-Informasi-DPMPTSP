@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('detail_layanan', function (Blueprint $table) {
             $table->id();
+            $table->foreignId("layanan_id")->nullable()->constrained("layanan")->onDelete("cascade")->onUpdate("cascade");
             $table->string('jenis_layanan')->nullable();
             $table->text('deskripsi')->nullable();
             $table->string('file')->nullable();

@@ -13,27 +13,27 @@ class DetailLayananController extends Controller
     {
         $DetailLayanan = DetailLayanan::all();
         // dd($DetailLayanan);
-        return view('admin.DetailLayanan.index', compact('DetailLayanan'));
+        return view('admin.Layanan.DetailLayanan.index', compact('DetailLayanan'));
     }
 
     public function create()
     {
-        return view('admin.DetailLayanan.tambah');
+        return view('admin.Layanan.DetailLayanan.tambah');
     }
 
     public function store(Request $request)
     {
         $request->validate([
-            'judul' => 'required',
-            'isi' => 'required',
+            'jenis_layanan' => 'required',
+            'deskripsi' => 'required',
 
         ]);
 
-        if($request->gambar != null){
+        if($request->foto != null){
             $date = date("his");
-            $extension = $request->file('gambar')->extension();
+            $extension = $request->file('foto')->extension();
             $file_name = "DetailLayanan_$date.$extension";
-            $path = $request->file('gambar')->storeAs('public/DetailLayanan/Gambar', $file_name);
+            $path = $request->file('foto')->storeAs('public/DetailLayanan/Foto', $file_name);
         }
         else{
             $file_name = null;
@@ -44,7 +44,7 @@ class DetailLayananController extends Controller
             $date = date("his");
             $extension = $request->file('file')->extension();
             $file_name1 = "DetailLayanan_$date.$extension";
-            $path = $request->file('file')->storeAs('public/DetailLayanan/Berkas', $file_name1);
+            $path = $request->file('file')->storeAs('public/DetailLayanan/File', $file_name1);
         }
         else{
             $file_name1 = null;
@@ -52,51 +52,49 @@ class DetailLayananController extends Controller
        
 
         $DetailLayanan = DetailLayanan::create([
-            'judul' => $request->judul,
-            'isi' => $request->isi,
-            'gambar' => $file_name,
+            'layanan_id' => $request->layanan_id,
+            'jenis_layanan' => $request->jenis_layanan,
+            'deskripsi' => $request->deskripsi,
+            'foto' => $file_name,
             'file' => $file_name1,
-            'penulis' => $request->penulis,
-            'users_id' => Auth::user()->id,
         ]);
 
 
-        return redirect()->route('DetailLayanan.index')
+        return back()
             ->with('success', 'DetailLayanan Berhasil Ditambahkan');
     }
 
     // public function show($id)
     // {
     //     $DetailLayanan =  DetailLayanan::find($id);
-    //     return view('admin.DetailLayanan.review', compact('DetailLayanan'));
+    //     return view('admin.Layanan.DetailLayanan.review', compact('DetailLayanan'));
     // }
 
 
     public function edit($id)
     {
         $DetailLayanan = DetailLayanan::find($id);
-        return view('admin.DetailLayanan.edit', compact('DetailLayanan'));
+        return view('admin.Layanan.DetailLayanan.edit', compact('DetailLayanan'));
     }
 
     public function update(Request $request, $id)
     {
         $DetailLayanan = DetailLayanan::findOrFail($id);
-        $DetailLayanan->judul = $request->judul;
-        $DetailLayanan->isi = $request->isi;
-        $DetailLayanan->penulis = $request->penulis;
+        $DetailLayanan->jenis_layanan = $request->jenis_layanan;
+        $DetailLayanan->deskripsi = $request->deskripsi;
 
 
 
-        if ($request->has("gambar")) {
+        if ($request->has("foto")) {
 
-            Storage::delete("public/DetailLayanan/$DetailLayanan->gambar");
+            Storage::delete("public/DetailLayanan/$DetailLayanan->foto");
 
             $date = date("his");
-            $extension = $request->file('gambar')->extension();
+            $extension = $request->file('foto')->extension();
             $file_name = "DetailLayanan_$date.$extension";
-            $path = $request->file('gambar')->storeAs('public/DetailLayanan/Gambar', $file_name);
+            $path = $request->file('foto')->storeAs('public/DetailLayanan/foto', $file_name);
 
-            $DetailLayanan->gambar = $file_name;
+            $DetailLayanan->foto = $file_name;
         }
         if ($request->has("file")) {
 
@@ -111,15 +109,16 @@ class DetailLayananController extends Controller
         }
 
         $DetailLayanan->save();
+        return redirect()->route('Layanan.show',$DetailLayanan->layanan_id);
 
     }
 
     public function destroy($id)
     {
         $DetailLayanan = DetailLayanan::findOrFail($id);
-        Storage::delete("public/DetailLayanan/$DetailLayanan->gambar");
+        Storage::delete("public/DetailLayanan/$DetailLayanan->foto");
         $DetailLayanan->delete();
-        return redirect()->route('DetailLayanan.index')
+        return back()
             ->with('success', 'DetailLayanan Berhasil Dihapus');
     }
 }

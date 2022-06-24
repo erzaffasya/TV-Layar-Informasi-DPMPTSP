@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DetailLayanan;
 use App\Models\Layanan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -12,7 +13,6 @@ class LayananController extends Controller
     public function index()
     {
         $Layanan = Layanan::all();
-        // dd($Layanan);
         return view('admin.Layanan.index', compact('Layanan'));
     }
 
@@ -64,11 +64,12 @@ class LayananController extends Controller
             ->with('success', 'Layanan Berhasil Ditambahkan');
     }
 
-    // public function show($id)
-    // {
-    //     $Layanan =  Layanan::find($id);
-    //     return view('admin.Layanan.review', compact('Layanan'));
-    // }
+    public function show($id)
+    {
+        $DetailLayanan = DetailLayanan::where('layanan_id', $id)->get();
+        $Layanan =  Layanan::find($id);
+        return view('admin.Layanan.DetailLayanan.index', compact('Layanan','DetailLayanan'));
+    }
 
 
     public function edit($id)

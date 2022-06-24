@@ -15,4 +15,9 @@ class Layanan extends Model
     ];
 
     protected $primaryKey = 'id';
+
+    public function detail_layanan()
+    {
+        return $this->hasMany(DetailLayanan::class,'layanan_id');
+    }
 }

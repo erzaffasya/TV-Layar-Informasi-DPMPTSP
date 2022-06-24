@@ -29,6 +29,7 @@
                                             <th>Foto</th>
                                             <th>Deskripsi</th>
                                             <th>Persyaratan</th>
+                                            <th>Layanan</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -79,9 +80,26 @@
                                                 overflow: auto;
                                                 text-overflow: ellipsis;">
                                                     {!! $item->persyaratan !!}</td>
+                                                <td
+                                                    style="max-width: 18rem;
+                                                white-space: nowrap;
+                                                overflow: auto;
+                                                text-overflow: ellipsis;">
+                                                    <ul>
+                                                        @foreach ($item->detail_layanan as $item1)
+                                                        <li>{{ $item1->jenis_layanan}}</li>
+                                                        @endforeach
+                                                    </ul>
+                                                </td>
                                                 {{-- <td>{!! $item->icon !!}</td> --}}
                                                 {{-- @if (Auth::Layanan()->role == 'admin') --}}
                                                 <td style="text-align: center;">
+                                                    <a href="{{ route('Layanan.show', $item->id) }}"
+                                                        class="btn btn-success btn-sm " data-toggle="tooltip"
+                                                        data-placement="top" title="Tambah Detail Layanan">
+                                                        <i class="fa-solid fa-user-plus"></i>
+
+                                                    </a>
                                                     <a href="{{ route('Layanan.edit', $item->id) }}"
                                                         class="btn btn-primary btn-sm">
                                                         <i class="fas fa-edit"></i>
