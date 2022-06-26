@@ -4,7 +4,7 @@
             <div class="column detail-ly-mp-card is-8 is-paddingless has-background-white">
                 <section class="hero is-medium is-link">
                     <div class="hero-body">
-                        <img src="asset/img/bpjs.jpg">
+                        <img src="{{ asset('tlandingpage/asset/img/bpjs.jpg') }}">
                     </div>
                 </section>
                 <section class="detail-ly-mp-content px-5">
@@ -12,7 +12,7 @@
                         <div class="column is-one-fifth">
                             <div class="has-background-white px-4 py-4">
                                 <figure class="image is-1by1">
-                                    <img src="asset/img/bpjs-logo2.png">
+                                    <img src="{{ asset('tlandingpage/asset/img/bpjs-logo2.png') }}">
                                 </figure>
                             </div>
                             <hr>
@@ -31,16 +31,16 @@
                             </div>
                         </div>
                         <div class="column">
-                            <p class="is-size-3 has-text-weight-bold has-text-white">BPJS Kesehatan</p>
-                            <p class="is-size-6 has-text-white">Lantai 1 - Loket 3</p>
-    
+                            <p class="is-size-3 has-text-weight-bold has-text-white">{{ $Layanan->nama_layanan }}</p>
+                            <p class="is-size-6 has-text-white">{{ $Layanan->lokasi }}</p>
+
                             <br>
                             <div>
                                 <p class="has-text-weight-bold is-size-7">Tentang</p>
-                                <p class="has-text-grey">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, vel recusandae nisi iure explicabo perspiciatis delectus adipisci. Animi, eos aliquam, iste sint, velit laboriosam debitis facere fugiat, fugit harum consequatur?</p>
+                                <p class="has-text-grey">{!! $Layanan->deskripsi !!}</p>
                             </div>
                             <br>
-    
+
                             <div class="tabs is-boxed is-fullwidth">
                                 <ul>
                                     <li class="is-active" data-tab="menu1">
@@ -58,17 +58,15 @@
                             <div id="menu1" class="tab-content current-tab">
                                 <div class="content">
                                     <ol>
-                                        <li>Layanan Informasi</li>
-                                        <li>Pendaftaran kepesertaan Program JKN-KIS segmen peserta</li>
-                                        <li>Perubahan data bagi segmen peserta penerima bantuan iuran kelas 3</li>
+                                        @foreach ($Layanan->detail_layanan as $item)
+                                            <li>{{ $item->jenis_layanan }}</li>
+                                        @endforeach
                                     </ol>
                                 </div>
                             </div>
                             <div id="menu2" class="tab-content">
                                 <div class="content">
-                                    <ol>
-                                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto vitae similique ea doloremque explicabo consequuntur corrupti odio at enim voluptatum dolore magnam id veniam, adipisci quaerat, molestiae vel? Nesciunt, illum.</li>
-                                    </ol>
+                                    {!! $Layanan->persyaratan !!}
                                 </div>
                             </div>
                         </div>

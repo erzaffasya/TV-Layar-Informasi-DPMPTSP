@@ -16,7 +16,7 @@
     </div>
 </footer>
 </div>
-<script type="text/javascript" src="{{asset("asset/js/jquery-3.6.0.min.js")}}"></script>
-<script type="text/javascript" src="{{asset("asset/js/main.js")}}"></script>
+<script type="text/javascript" src="{{asset("tlandingpage/asset/js/jquery-3.6.0.min.js")}}"></script>
+<script type="text/javascript" src="{{asset("tlandingpage/asset/js/main.js")}}"></script>
 </body>
 </html>

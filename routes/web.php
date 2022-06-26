@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DetailLayananController;
 use App\Http\Controllers\InformasiController;
+use App\Http\Controllers\LandingpageController;
 use App\Http\Controllers\LayananController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,24 +30,17 @@ route::prefix('admin')->middleware(['auth'])->group(
     }
 );
 
-// Route::get('data-inventor', [UserController::class, 'datainventor'])->name('datainventor');
+
 Route::get('/', function () {
     return view('landingpage.index');
 });
 
 // Layanan Landingpage 
-Route::get('Layanan-MPP', function () {
-    return view('landingpage.layanan.index');
-});
-Route::get('Layanan-MPP/1', function () {
-    return view('landingpage.layanan.detailLayanan');
-});
+Route::get('Layanan-MPP', [LandingpageController::class, 'IndexLayanan'])->name('LayananMPP');
+Route::get('Layanan-MPP/{id}', [LandingpageController::class, 'DetailLayanan'])->name('DetailLayanan');
 
 // Informasi Landingpage
-Route::get('Layanan-Informasi', function () {
-    return view('landingpage.informasi.index');
-});
-Route::get('Layanan-Informasi/1', function () {
-    return view('landingpage.informasi.detailInformasi');
-});
+Route::get('Layanan-Informasi', [LandingpageController::class, 'IndexInformasi'])->name('LayananInformasi');
+Route::get('Layanan-Informasi/{id}',[LandingpageController::class, 'DetailInformasi'])->name('DetailInformasi');
+
 require __DIR__ . '/auth.php';
