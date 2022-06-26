@@ -31,7 +31,22 @@ route::prefix('admin')->middleware(['auth'])->group(
 
 // Route::get('data-inventor', [UserController::class, 'datainventor'])->name('datainventor');
 Route::get('/', function () {
-    return view('admin.index');
-})->middleware(['auth'])->name('dashboard');
+    return view('landingpage.index');
+});
 
+// Layanan Landingpage 
+Route::get('Layanan-MPP', function () {
+    return view('landingpage.layanan.index');
+});
+Route::get('Layanan-MPP/1', function () {
+    return view('landingpage.layanan.detailLayanan');
+});
+
+// Informasi Landingpage
+Route::get('Layanan-Informasi', function () {
+    return view('landingpage.informasi.index');
+});
+Route::get('Layanan-Informasi/1', function () {
+    return view('landingpage.informasi.detailInformasi');
+});
 require __DIR__ . '/auth.php';
