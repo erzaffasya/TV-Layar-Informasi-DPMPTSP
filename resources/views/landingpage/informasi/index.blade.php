@@ -6,7 +6,7 @@
                     @if ($item->link_redirect != null)
                         <a href="{{ $item->link_redirect }}" target="_blank">
                         @else
-                            <a href="{{ url('Layanan-Informasi/' . $item->id) }}">
+                            <a href="{{ route('DetailInformasi', . $item->id) }}">
                     @endif
 
                     <div class="si-mp-card is-flex is-flex-direction-column px-3 pb-3 pt-4">

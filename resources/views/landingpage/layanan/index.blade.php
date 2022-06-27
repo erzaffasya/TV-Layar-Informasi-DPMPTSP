@@ -3,7 +3,7 @@
         <div class="columns is-multiline my-5">
             @foreach ($Layanan as $item)
                 <div class="column is-4 has-background-white">
-                    <a href="{{ url('Layanan-MPP/'.$item->id) }}">
+                    <a href="{{ route('DetailLayanan',$item->id) }}">
                         <div class="px-3 pb-3 pt-4">
                             <div class="columns ly-mp-card">
                                 <div class="column is-5 px-0 py-0">
