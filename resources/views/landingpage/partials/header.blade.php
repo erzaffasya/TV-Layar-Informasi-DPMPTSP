@@ -12,9 +12,11 @@
     <body>
     <body>
         
-        <div class="grid-bg ba-grid anim">
+        @if(request()->is('/'))
+         <div class="grid-bg ba-grid anim">
             <div class="inner"></div>
         </div>
+       @endif
 
         <div id="wrap-mpp">
             <nav class="level py-4 mb-2">
