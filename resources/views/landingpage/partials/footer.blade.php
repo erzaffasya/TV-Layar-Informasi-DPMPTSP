@@ -4,6 +4,7 @@
     <div class="has-text-centered is-size-5 has-text-dark has-text-weight-bold">
         Mal Pelayanan Publik - Dinas Penanaman Modal dan Pelayanan Terpadu Satu Pintu (DPMPTSP) Kota Balikpapan. 2022
     </div>
+    @if(request()->is('Layanan-MPP*','Layanan-Informasi*'))
     <div class="btn-back has-text-centered">
         <button onclick="history.back()"
             class="button is-link is-large is-fullwidth is-justify-content-space-between is-rounded">
@@ -15,6 +16,7 @@
             </span>
         </button>
     </div>
+    @endif
 </footer>
 </div>
 <script type="text/javascript" src="{{ asset('tlandingpage/asset/js/jquery-3.6.0.min.js') }}"></script>
