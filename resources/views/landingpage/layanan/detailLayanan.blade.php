@@ -4,7 +4,7 @@
             <div class="column detail-ly-mp-card is-8 is-paddingless has-background-white">
                 <section class="hero is-medium is-link">
                     <div class="hero-body">
-                        <img src="{{ asset('tlandingpage/asset/img/bpjs.jpg') }}">
+                        <img src="{{ asset("storage/Layanan/Foto/$item->foto") }}">
                     </div>
                 </section>
                 <section class="detail-ly-mp-content px-5">
@@ -12,7 +12,7 @@
                         <div class="column is-one-fifth">
                             <div class="has-background-white px-4 py-4">
                                 <figure class="image is-1by1">
-                                    <img src="{{ asset('tlandingpage/asset/img/bpjs-logo2.png') }}">
+                                    <img src="{{ asset("storage/Layanan/Logo/$item->logo") }}">
                                 </figure>
                             </div>
                             <hr>
