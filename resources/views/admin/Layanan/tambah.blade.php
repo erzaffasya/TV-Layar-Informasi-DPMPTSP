@@ -1,13 +1,13 @@
 <x-app-layout>
     <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-8">
 
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Tambah Data Layanan</h5>
 
                     <!-- General Form Elements -->
-                    <form action="{{route('Layanan.store')}}" method="post"  enctype="multipart/form-data">
+                    <form action="{{ route('Layanan.store') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="row mb-3">
                             <label for="inputText" class="col-sm-3 col-form-label">Nama Layanan</label>
@@ -44,7 +44,20 @@
                             <div class="col-sm-9">
                                 <textarea name="persyaratan" class="form-control" style="height: 100px"></textarea>
                             </div>
-                        </div>                    
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="inputPassword" class="col-sm-3 col-form-label">Jadwal Senin-Kamis</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="senin_kamis" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="inputPassword" class="col-sm-3 col-form-label">Jadwal Jumat</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="jumat" class="form-control" required>
+                            </div>
+                        </div>
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary">Submit</button>
                             <button type="reset" class="btn btn-secondary">Reset</button>

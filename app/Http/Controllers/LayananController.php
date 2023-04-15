@@ -57,6 +57,8 @@ class LayananController extends Controller
             'foto' => $file_name1,
             'deskripsi' => $request->deskripsi,
             'persyaratan' => $request->persyaratan,
+            'senin_kamis' => $request->senin_kamis,
+            'jumat' => $request->jumat,
         ]);
 
 
@@ -85,6 +87,8 @@ class LayananController extends Controller
         $Layanan->lokasi = $request->lokasi;
         $Layanan->deskripsi = $request->deskripsi;
         $Layanan->persyaratan = $request->persyaratan;
+        $Layanan->senin_kamis = $request->senin_kamis;
+        $Layanan->jumat = $request->jumat;
 
         if ($request->has("logo")) {
 

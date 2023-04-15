@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('persyaratan')->nullable();
             $table->string('logo')->nullable();
             $table->string('foto')->nullable();
+            $table->string('senin_kamis')->nullable();
+            $table->string('jumat')->nullable();
             $table->timestamps();
         });
     }
