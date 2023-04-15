@@ -27,6 +27,8 @@
                                             <th>Lokasi</th>
                                             <th>Logo</th>
                                             <th>Foto</th>
+                                            <th>Jadwal Senin-Kamis</th>
+                                            <th>Jadwal Jumat</th>
                                             <th>Deskripsi</th>
                                             <th>Persyaratan</th>
                                             <th>Layanan</th>
@@ -66,7 +68,8 @@
                                                     <img target="_blank" height="50"
                                                         src="{{ asset('storage/Layanan/Foto/' . $item->foto) }}">
                                                 </td>
-
+                                                <td style="text-align: center;">{{ $item->senin_kamis }}</td>
+                                                <td style="text-align: center;">{{ $item->jumat }}</td>
                                                 <td
                                                     style="max-width: 18rem;
                                                 white-space: nowrap;

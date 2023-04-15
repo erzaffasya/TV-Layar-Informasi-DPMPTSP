@@ -50,13 +50,13 @@
                         <div class="row mb-3">
                             <label for="inputPassword" class="col-sm-3 col-form-label">Jadwal Senin-Kamis</label>
                             <div class="col-sm-9">
-                                <input type="text" name="senin_kamis" class="form-control" value="{{ $DetailLayanan->senin_kamis }}" required>
+                                <input type="text" name="senin_kamis" class="form-control" value="{{ $Layanan->senin_kamis }}" required>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label for="inputPassword" class="col-sm-3 col-form-label">Jadwal Jumat</label>
                             <div class="col-sm-9">
-                                <input type="text" name="jumat" class="form-control" value="{{ $DetailLayanan->jumat }}" required>
+                                <input type="text" name="jumat" class="form-control" value="{{ $Layanan->jumat }}" required>
                             </div>
                         </div>          
                         <div class="text-center">
