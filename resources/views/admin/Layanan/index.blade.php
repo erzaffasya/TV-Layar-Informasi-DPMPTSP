@@ -41,12 +41,12 @@
                                         @foreach ($Layanan as $item)
                                             <tr>
                                                 <td style="text-align: center;">{{ $loop->iteration }}</td>
-                                                <td style="text-align: center;">{{ $item->urut }}</td>
                                                 <td
                                                     style="max-width: 18rem;
                                             white-space: nowrap;
                                             overflow: auto;">
                                                     {!! $item->nama_layanan !!}</td>
+                                                    <td style="text-align: center;">{{ $item->urut }}</td>
                                                 <td
                                                     style="max-width: 18rem;
                                             white-space: nowrap;
