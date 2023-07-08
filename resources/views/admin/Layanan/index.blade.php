@@ -24,6 +24,7 @@
                                         <tr>
                                             <th>No.</th>
                                             <th>Nama Layanan</th>
+                                            <th>Urut</th>
                                             <th>Lokasi</th>
                                             <th>Logo</th>
                                             <th>Foto</th>
@@ -39,7 +40,8 @@
 
                                         @foreach ($Layanan as $item)
                                             <tr>
-                                                <td style="text-align: center;">{{ $item->id }}</td>
+                                                <td style="text-align: center;">{{ $loop->iteration }}</td>
+                                                <td style="text-align: center;">{{ $item->urut }}</td>
                                                 <td
                                                     style="max-width: 18rem;
                                             white-space: nowrap;

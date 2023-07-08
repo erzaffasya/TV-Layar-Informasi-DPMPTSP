@@ -12,7 +12,7 @@ class LayananController extends Controller
 {
     public function index()
     {
-        $Layanan = Layanan::all();
+        $Layanan = Layanan::orderBy('urut','ASC')->get();
         return view('admin.Layanan.index', compact('Layanan'));
     }
 
@@ -59,6 +59,7 @@ class LayananController extends Controller
             'persyaratan' => $request->persyaratan,
             'senin_kamis' => $request->senin_kamis,
             'jumat' => $request->jumat,
+            'urut' => $request->urut,
         ]);
 
 
@@ -89,6 +90,7 @@ class LayananController extends Controller
         $Layanan->persyaratan = $request->persyaratan;
         $Layanan->senin_kamis = $request->senin_kamis;
         $Layanan->jumat = $request->jumat;
+        $Layanan->urut = $request->urut;
 
         if ($request->has("logo")) {
 

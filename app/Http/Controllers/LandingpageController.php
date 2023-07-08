@@ -10,8 +10,7 @@ class LandingpageController extends Controller
 {
     public function IndexLayanan()
     {
-        $Layanan = Layanan::all();
-        // dd($Informasi);
+        $Layanan = Layanan::orderBy('urut','ASC')->get();
         return view('landingpage.layanan.index', compact('Layanan'));
     }
     public function DetailLayanan($id)
