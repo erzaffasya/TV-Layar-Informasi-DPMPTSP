@@ -21,12 +21,12 @@
                                 <ul class="is-paddingless ml-3 mt-0">
                                     <li class="mb-2">
                                         <p class="has-text-weight-bold mb-0 is-size-7 has-text-grey">Senin-Kamis</p>
-                                        <p class="is-size-7 has-text-grey"><span>Pukul </span>{{$Layanan->senin_kamis}}</p>
+                                        <p class="is-size-7 has-text-grey">{!!$Layanan->senin_kamis!!}</p>
                                     </li>
-                                    <li class="mb-2">
+                                    {{-- <li class="mb-2">
                                         <p class="has-text-weight-bold mb-0 is-size-7 has-text-grey">Jumat</p>
                                         <p class="is-size-7 has-text-grey"><span>Pukul </span>{{$Layanan->jumat}}</p>
-                                    </li>
+                                    </li> --}}
                                 </ul>
                             </div>
                         </div>

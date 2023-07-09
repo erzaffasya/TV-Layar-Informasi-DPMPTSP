@@ -55,15 +55,16 @@
                         <div class="row mb-3">
                             <label for="inputPassword" class="col-sm-3 col-form-label">Jadwal Senin-Kamis</label>
                             <div class="col-sm-9">
-                                <input type="text" name="senin_kamis" class="form-control" required>
+                                <textarea name="senin_kamis" class="form-control" style="height: 100px"></textarea>
+                                {{-- <input type="text" name="senin_kamis" class="form-control" required> --}}
                             </div>
                         </div>
-                        <div class="row mb-3">
+                        {{-- <div class="row mb-3">
                             <label for="inputPassword" class="col-sm-3 col-form-label">Jadwal Jumat</label>
                             <div class="col-sm-9">
-                                <input type="text" name="jumat" class="form-control" required>
+                                <input type="hidden" value="-" name="jumat" class="form-control" >
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary">Submit</button>
                             <button type="reset" class="btn btn-secondary">Reset</button>

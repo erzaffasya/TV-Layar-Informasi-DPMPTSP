@@ -56,15 +56,16 @@
                         <div class="row mb-3">
                             <label for="inputPassword" class="col-sm-3 col-form-label">Jadwal Senin-Kamis</label>
                             <div class="col-sm-9">
-                                <input type="text" name="senin_kamis" class="form-control" value="{{ $Layanan->senin_kamis }}" required>
+                                <textarea name="senin_kamis" class="form-control" style="height: 100px">{{ $Layanan->senin_kamis }}</textarea>
+                                {{-- <input type="text" name="senin_kamis" class="form-control" value="{{ $Layanan->senin_kamis }}" required> --}}
                             </div>
                         </div>
-                        <div class="row mb-3">
+                        {{-- <div class="row mb-3">
                             <label for="inputPassword" class="col-sm-3 col-form-label">Jadwal Jumat</label>
                             <div class="col-sm-9">
-                                <input type="text" name="jumat" class="form-control" value="{{ $Layanan->jumat }}" required>
+                                <input type="hidden" value="-" name="jumat" class="form-control">
                             </div>
-                        </div>          
+                        </div>           --}}
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary">Submit</button>
                             <button type="reset" class="btn btn-secondary">Reset</button>

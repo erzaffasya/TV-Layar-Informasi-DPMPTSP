@@ -20,12 +20,12 @@
                                     </p>
                                     <p class="is-size-6 has-text-grey has-text-weight-semibold">{{ $item->lokasi }}</p>
                                     <div class="content mt-3">
-                                        <p class="has-text-weight-bold mb-0 has-text-grey-dark">Jenis Layanan</p>
+                                        {{-- <p class="has-text-weight-bold mb-0 has-text-grey-dark">Jenis Layanan</p>
                                         <ol class="ml-4 mt-0 is-size-7 has-text-grey has-text-weight-semibold">
                                             @foreach ($item->detail_layanan as $item1)
                                                 <li>{{ $item1->jenis_layanan }}</li>
                                             @endforeach
-                                        </ol>
+                                        </ol> --}}
                                         <button
                                             class="button ly-mp-btn-dtl is-link is-fullwidth is-justify-content-space-between">
                                             <span>
