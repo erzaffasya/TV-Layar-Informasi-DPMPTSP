@@ -54,9 +54,17 @@
                         </div>          
                         
                         <div class="row mb-3">
-                            <label for="inputPassword" class="col-sm-3 col-form-label">Jadwal Senin-Kamis</label>
+                            <label for="inputPassword" class="col-sm-3 col-form-label">Jadwal </label>
                             <div class="col-sm-9">
                                 <textarea name="senin_kamis" class="form-control" style="height: 100px">{{ $Layanan->senin_kamis }}</textarea>
+                                {{-- <input type="text" name="senin_kamis" class="form-control" value="{{ $Layanan->senin_kamis }}" required> --}}
+                            </div>
+                        </div>
+                                
+                        <div class="row mb-3">
+                            <label for="inputPassword" class="col-sm-3 col-form-label">Detail Layanan </label>
+                            <div class="col-sm-9">
+                                <textarea name="detail_layanan" class="form-control" style="height: 100px">{{ $Layanan->detail_layanan }}</textarea>
                                 {{-- <input type="text" name="senin_kamis" class="form-control" value="{{ $Layanan->senin_kamis }}" required> --}}
                             </div>
                         </div>

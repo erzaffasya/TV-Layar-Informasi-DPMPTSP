@@ -29,6 +29,7 @@
                                             <th>Logo</th>
                                             <th>Foto</th>
                                             <th>Jadwal</th>
+                                            <th>Detail Layanan</th>
                                             {{-- <th>Jadwal Jumat</th> --}}
                                             <th>Deskripsi</th>
                                             <th>Persyaratan</th>
@@ -46,7 +47,7 @@
                                             white-space: nowrap;
                                             overflow: auto;">
                                                     {!! $item->nama_layanan !!}</td>
-                                                    <td style="text-align: center;">{{ $item->urut }}</td>
+                                                <td style="text-align: center;">{{ $item->urut }}</td>
                                                 <td
                                                     style="max-width: 18rem;
                                             white-space: nowrap;
@@ -74,6 +75,12 @@
                                                 {{-- <td style="text-align: center;">{{ $item->jumat }}</td> --}}
                                                 <td
                                                     style="max-width: 18rem;
+                                            white-space: nowrap;
+                                            overflow: auto;
+                                            text-overflow: ellipsis;">
+                                                    {!! $item->detail_layanan !!}</td>
+                                                <td
+                                                    style="max-width: 18rem;
                                                 white-space: nowrap;
                                                 overflow: auto;
                                                 text-overflow: ellipsis;">
@@ -92,7 +99,7 @@
                                                 text-overflow: ellipsis;">
                                                     <ul>
                                                         @foreach ($item->detail_layanan as $item1)
-                                                        <li>{{ $item1->jenis_layanan}}</li>
+                                                            <li>{{ $item1->jenis_layanan }}</li>
                                                         @endforeach
                                                     </ul>
                                                 </td>

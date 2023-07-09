@@ -60,6 +60,7 @@ class LayananController extends Controller
             'senin_kamis' => $request->senin_kamis,
             'jumat' => $request->jumat,
             'urut' => $request->urut,
+            'detail_layanan' => $request->detail_layanan
         ]);
 
 
@@ -91,6 +92,7 @@ class LayananController extends Controller
         $Layanan->senin_kamis = $request->senin_kamis;
         $Layanan->jumat = $request->jumat;
         $Layanan->urut = $request->urut;
+        $Layanan->detail_layanan = $request->detail_layanan;
 
         if ($request->has("logo")) {
 

@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('foto')->nullable();
             $table->string('senin_kamis')->nullable();
             $table->string('jumat')->nullable();
+            $table->text('detail_layanan')->nullable();
             $table->integer('urut')->nullable();
             $table->timestamps();
         });

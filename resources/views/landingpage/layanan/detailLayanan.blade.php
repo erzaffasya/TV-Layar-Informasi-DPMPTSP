@@ -57,11 +57,7 @@
                             </div>
                             <div id="menu1" class="tab-content current-tab">
                                 <div class="content">
-                                    <ol>
-                                        @foreach ($Layanan->detail_layanan as $item)
-                                            <li>{{ $item->jenis_layanan }}</li>
-                                        @endforeach
-                                    </ol>
+                                    {!! $Layanan->detail_layanan!!}
                                 </div>
                             </div>
                             <div id="menu2" class="tab-content">
