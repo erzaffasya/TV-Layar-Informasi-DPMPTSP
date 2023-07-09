@@ -105,14 +105,14 @@ class LayananController extends Controller
 
             $Layanan->logo = $file_name;
         }
-        if ($request->has("file")) {
+        if ($request->has("foto")) {
 
-            Storage::delete("public/Layanan/$Layanan->file");
+            Storage::delete("public/Layanan/$Layanan->foto");
 
             $date = date("his");
-            $extension = $request->file('file')->extension();
+            $extension = $request->file('foto')->extension();
             $file_name1 = "Layanan_$date.$extension";
-            $path = $request->file('file')->storeAs('public/Layanan/Foto', $file_name1);
+            $path = $request->file('foto')->storeAs('public/Layanan/Foto', $file_name1);
 
             $Layanan->foto = $file_name1;
         }
