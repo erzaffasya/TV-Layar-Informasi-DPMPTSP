@@ -33,7 +33,7 @@
                                             {{-- <th>Jadwal Jumat</th> --}}
                                             <th>Deskripsi</th>
                                             <th>Persyaratan</th>
-                                            <th>Layanan</th>
+                                            {{-- <th>Layanan</th> --}}
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -92,7 +92,7 @@
                                                 overflow: auto;
                                                 text-overflow: ellipsis;">
                                                     {!! $item->persyaratan !!}</td>
-                                                <td
+                                                {{-- <td
                                                     style="max-width: 18rem;
                                                 white-space: nowrap;
                                                 overflow: auto;
@@ -102,7 +102,7 @@
                                                             <li>{{ $item1->jenis_layanan }}</li>
                                                         @endforeach
                                                     </ul>
-                                                </td>
+                                                </td> --}}
                                                 {{-- <td>{!! $item->icon !!}</td> --}}
                                                 {{-- @if (Auth::Layanan()->role == 'admin') --}}
                                                 <td style="text-align: center;">
